@@ -1,4 +1,4 @@
-    ---
+---
 name: Konstantin Kucheryavyy
 role: Instructor
 email: kucher@pp.u-tokyo.ac.jp
