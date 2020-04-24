@@ -14,10 +14,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: DSPER
-title_long: Data Science for Practical Economic Research
-description: A Jekyll theme for course websites.
-author: Kevin Lin
-email: me@example.com
+semester: 2020 S1S2
+description: Data Science for Practical Economic Research
+author: Francis Zheng
+email: francis@g.ecc.u-tokyo.ac.jp
 baseurl: '/just-the-class' # the subpath of your site, e.g. /blog
 url: 'https://kevinl.info' # the base hostname & protocol for your site, e.g. http://example.com
 exclude: ["Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
