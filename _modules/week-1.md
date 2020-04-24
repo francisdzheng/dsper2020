@@ -1,6 +1,6 @@
 ---
 week: 1
-title: Introduction to Java
+title: Introduction to Python
 days:
   - date: 2019-04-01
     events:
