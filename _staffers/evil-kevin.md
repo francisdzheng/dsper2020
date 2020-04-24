@@ -1,9 +1,9 @@
 ---
-name: Evil Kevin
+name: Francis Zheng
 role: Teaching Assistant
-email: me@example.com
+email: francis@g.ecc.u-tokyo.ac.jp
 website: https://kevinl.info
 photo: /assets/images/kevin.jpg
 ---
 
-I like teaching Computer Science!
+Hi! I'm Francis.
