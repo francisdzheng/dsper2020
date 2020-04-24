@@ -17,11 +17,11 @@ description: >-
 [Announcements]({{ site.baseurl }}{% link announcements.md %}){: .btn .btn-outline .fs-3 }
 {% endif %}
 
-## Just the Class
+## Important information
 
 Just the Class is a GitHub Pages template developed for the purpose of quickly deploying course websites. In addition to serving plain web pages and files, it provides a boilerplate for:
 
-- a [course calendar](calendar),
+- Please check [Piazza](https://piazza.com/class/k8pcxfiwkxf2ec) regularly for announcements. 
 - a [staff](staff) page,
 - a weekly [schedule](schedule),
 - and [Google Calendar](google-calendar) integration.
