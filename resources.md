@@ -27,6 +27,10 @@ Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Vulputate d
 ## pandas
 Lacus viverra vitae congue eu. Suspendisse in est ante in nibh mauris cursus mattis. Nisl vel pretium lectus quam id leo in. Euismod lacinia at quis risus sed vulputate odio. Non enim praesent elementum facilisis. Aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer. Id interdum velit laoreet id donec ultrices tincidunt arcu. Urna molestie at elementum eu facilisis sed odio. Auctor urna nunc id cursus metus aliquam eleifend. Volutpat commodo sed egestas egestas fringilla phasellus. Libero nunc consequat interdum varius sit amet mattis. Imperdiet nulla malesuada pellentesque elit eget gravida cum sociis natoque. Tortor vitae purus faucibus ornare suspendisse. Auctor elit sed vulputate mi.
 
-## Assignments
+## Books
 
-Vehicula ipsum a arcu cursus vitae congue. Etiam dignissim diam quis enim lobortis scelerisque fermentum dui. Risus sed vulputate odio ut enim blandit. Aliquam id diam maecenas ultricies mi eget. Id consectetur purus ut faucibus pulvinar elementum integer enim neque. Eget mi proin sed libero enim sed faucibus. Sem integer vitae justo eget magna fermentum iaculis. In mollis nunc sed id semper risus in. Sit amet risus nullam eget felis eget. Mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget. Nascetur ridiculus mus mauris vitae ultricies leo integer malesuada. Porta non pulvinar neque laoreet suspendisse interdum consectetur libero id. At varius vel pharetra vel turpis nunc eget. Scelerisque purus semper eget duis at tellus.
+- G. James, D. Witten, T. Hastie and R. Tibshirani, “An Introduction to Statistical Learning, with applications in R” (Springer, 2013)
+
+- T. Hastie, R. Tibshirani and J. Friedman, “The Elements of Statistical Learning: Data Mining, Inference, and Prediction” (Springer, 2009)
+
+- M. Mohri, A. Rostamizadeh and A. Talwalkar, “Foundations of Machine Learning” (The MIT Press, 2018, 2nd edition)

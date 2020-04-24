@@ -1,6 +1,6 @@
 ---
-week: 2
-title: Nearest Neighbors
+week: 3
+title: Classification Methods
 days:
   - date: 2019-04-08
     events:

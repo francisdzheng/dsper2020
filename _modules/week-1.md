@@ -1,8 +1,8 @@
 ---
 week: 1
-title: Introduction to Python
+title: Linear Regression
 days:
-  - date: 2019-04-01
+  - date: 2020-04-07
     events:
       "[Java & Git](#)":
         "[1.1](#)"
