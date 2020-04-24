@@ -9,7 +9,7 @@ description: >-
 
 # {{ site.description }}
 {: .mb-2 }
-{{ site.title }}
+{{ site.title_long }}
 {: .fs-6 .fw-300 }
 
 {% if site.announcements %}
