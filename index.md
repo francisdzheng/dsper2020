@@ -14,7 +14,7 @@ description: >-
 
 {% if site.announcements %}
 {{ site.announcements.last }}
-[Announcements]({{ site.baseurl }}{% link announcements.md %}){: .btn .btn-outline .fs-3 }
+[Announcements &#124; お知らせ]({{ site.baseurl }}{% link announcements.md %}){: .btn .btn-outline .fs-3 }
 {% endif %}
 
 ## Important information

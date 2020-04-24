@@ -1,8 +1,8 @@
 ---
-name: Francis Zheng
+name: Francis Zheng &#124; ゼン・フランシス
 role: Teaching Assistant
 email: francis@g.ecc.u-tokyo.ac.jp
-website: https://kevinl.info
+website: https://franciszheng.com
 photo: /assets/images/kevin.jpg
 ---
 
