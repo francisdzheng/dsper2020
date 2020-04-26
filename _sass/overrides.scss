@@ -1,5 +1,5 @@
 a {
-  color: $main-color;
+  color: $green-200;
 }
 
 a abbr[title] {
@@ -15,7 +15,7 @@ abbr[title] {
 }
 
 ::selection {
-  background: #ffb7b7;
+  background: $red-100;
 }
 
 code {
