@@ -19,10 +19,10 @@ description: >-
 
 ## Important information
 
-Just the Class is a GitHub Pages template developed for the purpose of quickly deploying course websites. In addition to serving plain web pages and files, it provides a boilerplate for:
+This website serves as supplementary material for Professor Konstantin Kucheryavyy's Data Science for Practical Economic Research course. In addition to serving plain web pages and files, it provides a boilerplate for:
 
 - Please check [Piazza](https://piazza.com/class/k8pcxfiwkxf2ec) regularly for announcements. 
-- a [staff](staff) page,
+- Lectures are held every Tuesday, 14:55 - 16:40 (4限). The Zoom link can be found on UTAS. 
 - a weekly [schedule](schedule),
 - and [Google Calendar](google-calendar) integration.
 
