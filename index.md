@@ -23,26 +23,15 @@ This website serves as a supplement to Professor Konstantin Kucheryavyy's Data S
 
 - Please check [Piazza](https://piazza.com/class/k8pcxfiwkxf2ec) regularly for announcements. 
 - Lectures are held every Tuesday, 14:55 - 16:40 (4限). The Zoom link can be found on UTAS. 
-- a weekly [schedule](schedule),
-- and [Google Calendar](google-calendar) integration.
 
-Just the Class is built on top of [Just the Docs](https://github.com/pmarsceill/just-the-docs), making it easy to extend for your own special use cases while providing sane defaults for most everything else. This means that you also get:
+## Goals
 
-- automatic [navigation structure](https://pmarsceill.github.io/just-the-docs/docs/navigation-structure/),
-- instant, full-text [search](https://pmarsceill.github.io/just-the-docs/docs/search/) and page indexing,
-- and a small but powerful set of [UI components](https://pmarsceill.github.io/just-the-docs/docs/ui-components) and authoring [utilities](https://pmarsceill.github.io/just-the-docs/docs/utilities).
+In this course, we will study the fundamentals of machine learning, with a focus on economic applications. Topics include:
+- Supervised machine learning: under-fitting and over-fitting, regularization, cross-validation, data augmentation
+- Unsupervised machine learning: clustering, factor analysis, principal component analysis, independent component analysis
+- Semi-supervised learning
 
-## Getting Started
-
-Getting started with Just the Class is simple.
-
-1. Create a [new repository based on Just the Class](https://github.com/kevinlin1/just-the-class/generate).
-1. Configure a [publishing source for GitHub Pages](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages). Your course website is now live!
-1. Update `_config.yml` with your course information.
-1. Edit and create `.md` [Markdown files](https://guides.github.com/features/mastering-markdown/) to add your content.
-
-Continue reading to learn how to setup a development environment on your local computer. This allows you to make incremental changes without directly modifying the live website.
-
+<!-- 
 ### Local development environment
 
 Just the Class is built for [Jekyll](https://jekyllrb.com), a static site generator. View the [quick start guide](https://jekyllrb.com/docs/) for more information. Just the Docs requires no special Jekyll plugins and can run on GitHub Pages' standard Jekyll compiler.
@@ -55,4 +44,4 @@ $ bundle exec jekyll serve
 1. Point your web browser to [http://localhost:4000](http://localhost:4000)
 1. Reload your web browser after making a change to preview its effect.
 
-For more information, refer to [Just the Docs](https://pmarsceill.github.io/just-the-docs/).
+For more information, refer to [Just the Docs](https://pmarsceill.github.io/just-the-docs/). -->
