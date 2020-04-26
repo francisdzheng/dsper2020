@@ -29,6 +29,8 @@ search_enabled: true
 heading_anchors: true
 permalink: pretty
 nav_links:
+    Piazza:
+      - 'https://piazza.com/class/k8pcxfiwkxf2ec'
 aux_links:
   Francis Zheng:
     - 'https://franciszheng.com'
