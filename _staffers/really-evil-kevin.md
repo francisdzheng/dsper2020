@@ -1,9 +1,7 @@
 ---
-name: Really Evil Kevin
+name: Saul Trujillo Castillo
 role: Teaching Assistant
-email: me@example.com
-website: https://kevinl.info
-photo: /assets/images/kevin.jpg
+email: 3881022596@edu.k.u-tokyo.ac.jp
+website: 
+photo: 
 ---
-
-I like teaching Computer Science!
