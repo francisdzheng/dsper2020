@@ -1,5 +1,5 @@
 ---
-title: Homework 2 Released! 
+title: Homework 2
 week: 1
 date: 2020-04-27
 ---
