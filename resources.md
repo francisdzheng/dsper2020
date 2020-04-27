@@ -15,6 +15,12 @@ description:
 {:toc}
 
 ---
+## Web References
+- Data Visualization
+    - [matplotlib.pyplot tutorial](https://matplotlib.org/tutorials/introductory/pyplot.html)
+    - [CSE512 from the University of Washington](https://courses.cs.washington.edu/courses/cse512/19sp/)
+- Python
+
 
 ## Books
 
