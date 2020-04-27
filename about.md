@@ -19,6 +19,8 @@ description: >-
 
 ## Installing a terminal
 
+A terminal (also known as the command line or console) is a program that allows you to type and execute text-based commands to control actions on your computer. 
+
 ### Windows
 
 Install the [Windows Terminal from the Microsoft Store](https://aka.ms/windowsterminal).
