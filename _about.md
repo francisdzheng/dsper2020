@@ -31,7 +31,9 @@ If you are using macOS or Linux, you already have a program called `Terminal`.
 
 ## Installing Anaconda
 
-Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Vulputate dignissim suspendisse in est ante in. Massa vitae tortor condimentum lacinia quis vel. Gravida neque convallis a cras semper auctor. Pellentesque eu tincidunt tortor aliquam nulla. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna. Sit amet purus gravida quis blandit turpis cursus in. Porttitor leo a diam sollicitudin tempor. Vel facilisis volutpat est velit egestas dui id ornare. Cum sociis natoque penatibus et magnis. Tristique magna sit amet purus gravida. Nibh sit amet commodo nulla facilisi nullam vehicula. Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Id semper risus in hendrerit gravida. Sit amet justo donec enim diam vulputate ut pharetra sit. Vitae justo eget magna fermentum. Tellus in metus vulputate eu. Pellentesque id nibh tortor id aliquet lectus proin nibh nisl. Etiam erat velit scelerisque in dictum non consectetur a erat. Pellentesque eu tincidunt tortor aliquam nulla.
+Anaconda is a Python and R distribution that contains various packages used in data science and machine learning. It also includes an environment management system called [Conda](https://docs.conda.io/en/latest/), which allows you to easily install/update packages and create/load environments. This allows you to, for example, work with different versions of Python on the same computer by creating a separate environment for each.
+
+Please download Anaconda [here](https://www.anaconda.com/products/individual#Downloads). 
 
 ## Resources
 

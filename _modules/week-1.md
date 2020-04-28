@@ -2,22 +2,17 @@
 week: 1
 title: Getting Started
 days:
-  - date: 2020-04-07
+  - date: 2020-04-28
     events:
-      "[Setting up your environment](../about/)":
-        "[1.1](#)"
-      "**HW 1 out**{: .label .label-hw-out }":
-        null
-  - date: 2019-04-02
+      "[Setting up your environment](../tutorials/tutorial01/#setting-up-your-environment)":
+  - date: TBA
     events:
-      "**Section**{: .label .label-section } [Selecting a data set](#)":
-        "Solution"
-  - date: 2019-04-03
+      "[Selecting a data set](#)":
+  - date: TBA
     events:
       "[Cleaning data](#)":
-        "[1.2](#), [2.1](#)"
-  - date: 2019-04-04
+  - date: TBA
     events:
-      "**Lab**{: .label } [Getting familiar with your data](#)":
+      "[Getting familiar with your data](#)":
         null
 ---
