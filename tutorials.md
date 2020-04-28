@@ -8,7 +8,7 @@ has_children: true
 
 # Tutorials
 
-These tutorials are meant to accompany the homework assignments in this class, and provide you with the necessary fundamentals to succeed. All tutorials will be done in Python. 
+These tutorials are meant to accompany the homework assignments in this class and provide you with the necessary fundamentals to succeed. All tutorials will be done in Python. 
 
 ## Modules
 
