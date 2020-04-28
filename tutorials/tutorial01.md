@@ -104,7 +104,7 @@ You now have created a new Jupyter Notebook! Let's enter `print('Hello World')` 
 
 ![jupyter3](jupyter3.png)
 
-To shut down your Jupyter Notebook server, type `ctrl + c`. 
+To shut down your Jupyter Notebook server, type `ctrl + c` into your terminal. 
 
 You will complete your homework assignments in these notebooks. 
 
