@@ -8,6 +8,8 @@ description:
 # Resources
 {:.no_toc}
 
+This page is under construction.
+
 ## Table of contents
 {: .no_toc .text-delta }
 
