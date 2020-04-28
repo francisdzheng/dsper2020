@@ -77,7 +77,9 @@ Next, let's create a new folder called `dsper`, using the `mkdir` command:
 mkdir dsper
 ```
 
-Now, if you type `ls` (while still in the `Documents` folder), you should see your new `dsper` folder. 
+Now, if you type `ls` (while still in the `Documents` folder), you should see your new `dsper` folder.
+
+To move to the parent directory of whatever directory you're in, you can use `cd ..`. To move to your home directory, use `cd ~`.
 
 
 #### Creating a new Jupyter Notebook
@@ -98,12 +100,11 @@ Let's click on `New` on the right side, and select `Python 3`:
 
 ![jupyter2](jupyter2.png)
 
-
 You now have created a new Jupyter Notebook! Let's enter `print('Hello World')` in the first cell and then press `Enter` while holding the `Shift` key to run this cell:
 
 ![jupyter3](jupyter3.png)
 
-You will complete your homework assignments in these notebooks. 
+To You will complete your homework assignments in these notebooks. 
 
 ## Selecting a data set
 
