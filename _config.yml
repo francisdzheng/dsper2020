@@ -18,7 +18,7 @@ semester: 2020 S1S2
 description: Data Science for Practical Economic Research
 author: Francis Zheng
 email: francis@g.ecc.u-tokyo.ac.jp
-baseurl: '/teaching/dsper2020' # the subpath of your site, e.g. /blog
+baseurl: '/dsper2020' # the subpath of your site, e.g. /blog
 url: 'https://franciszheng.com' # the base hostname & protocol for your site, e.g. http://example.com
 exclude: ["Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
 
