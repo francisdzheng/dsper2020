@@ -104,7 +104,9 @@ You now have created a new Jupyter Notebook! Let's enter `print('Hello World')` 
 
 ![jupyter3](jupyter3.png)
 
-To You will complete your homework assignments in these notebooks. 
+To shut down your Jupyter Notebook server, type `ctrl + c`. 
+
+You will complete your homework assignments in these notebooks. 
 
 ## Selecting a data set
 
