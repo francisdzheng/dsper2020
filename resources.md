@@ -5,7 +5,7 @@ nav_order: 5
 description: 
 ---
 
-# About
+# Resources
 {:.no_toc}
 
 ## Table of contents
