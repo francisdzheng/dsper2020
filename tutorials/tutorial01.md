@@ -100,7 +100,7 @@ Let's click on `New` on the right side, and select `Python 3`:
 
 ![jupyter2](jupyter2.png)
 
-You now have created a new Jupyter Notebook! Let's enter `print('Hello World')` in the first cell and then press `Enter` while holding the `Shift` key to run this cell:
+You now have created a new Jupyter Notebook! Type `print('Hello World')` into the first cell and then press `Enter` while holding the `Shift` key to run this cell:
 
 ![jupyter3](jupyter3.png)
 
