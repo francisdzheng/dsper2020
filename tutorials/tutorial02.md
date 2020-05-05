@@ -18,7 +18,7 @@ nav_exclude: true
 
 ## Importing Libraries
 
-As usual, we will want to use `numpy`, `pandas`, `matplot`, `seaborn` to help us manipulate and visualize our data. 
+As usual, we will want to use `numpy`, `pandas`, `matplot`, and `seaborn` to help us manipulate and visualize our data. 
 
 ```python
 import numpy as np
