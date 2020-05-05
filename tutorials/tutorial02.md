@@ -230,7 +230,7 @@ Using the above code, we get the following heat map:
 Using this heat map, we can make the following observations:
 
 1. All setosa flowers were correctly classified by our model. 
-2. All versicolor flowers were correctly classified by our model
+2. All versicolor flowers were correctly classified by our model.
 3. Nine virginica flowers were correctly classified, and two virginica flowers were incorrectly classified as versicolor flowers.
 
 Again, your results will be slightly depending on how you split your training and test data.  
