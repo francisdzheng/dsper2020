@@ -108,8 +108,8 @@ To shut down your Jupyter Notebook server, type `ctrl + c` into your terminal.
 
 You will complete your homework assignments in these notebooks. 
 
-## Selecting a data set
+<!-- ## Selecting a data set
 
 ## Cleaning data
 
-## Getting familiar with your data
+## Getting familiar with your data -->
