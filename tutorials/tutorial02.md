@@ -124,6 +124,8 @@ y_pred = classifier.predict(X_test)
 
 Now, our model can take attributes (sepal-length, sepal-width, petal-length, and petal-width) and predict which type of iris it is. We are doing this using our test data, `X_test`.
 
+### Evaluating our Algorithm
+
 We do not have too many data points, so we can first just compare our predictions with our test data visually:
 
 ```python
@@ -131,43 +133,96 @@ print("predicted: ", y_pred)
 print("actual: ", y_test)
 ```
 
-| Predicted       | Actual          |
-|:-----------------:|:-----------------:|
-| Iris-setosa     | Iris-setosa     |
-| Iris-virginica  | Iris-versicolor |
+|    Predicted    |      Actual     |
+|:---------------:|:---------------:|
+|  Iris-virgnica  |  Iris-virginica |
 | Iris-versicolor | Iris-versicolor |
-| Iris-versicolor | Iris-virginica  |
-| Iris-virginica  | Iris-virginica  |
-| Iris-setosa     | Iris-setosa     |
-| Iris-setosa     | Iris-setosa     |
-| Iris-virginica  | Iris-versicolor |
+|  Iris-virginica |  Iris-virginica |
+|   Iris-setosa   |   Iris-setosa   |
 | Iris-versicolor | Iris-versicolor |
-| Iris-setosa     | Iris-setosa     |
-| Iris-virginica  | Iris-virginica  |
 | Iris-versicolor | Iris-versicolor |
-| Iris-virginica  | Iris-virginica  |
-| Iris-setosa     | Iris-setosa     |
-| Iris-virginica  | Iris-virginica  |
 | Iris-versicolor | Iris-versicolor |
-| Iris-virginica  | Iris-virginica  |
-| Iris-setosa     | Iris-setosa     |
-| Iris-virginica  | Iris-virginica  |
+|  Iris-virginica |  Iris-virginica |
 | Iris-versicolor | Iris-versicolor |
-| Iris-setosa     | Iris-setosa     |
-| Iris-setosa     | Iris-setosa     |
-| Iris-virginica  | Iris-virginica  |
-| Iris-virginica  | Iris-virginica  |
 | Iris-versicolor | Iris-versicolor |
-| Iris-setosa     | Iris-setosa     |
-| Iris-setosa     | Iris-setosa     |
-| Iris-virginica  | Iris-versicolor |
 | Iris-versicolor | Iris-versicolor |
-| Iris-setosa     | Iris-setosa     |
+| Iris-versicolor | Iris-versicolor |
+|   Iris-setosa   |   Iris-setosa   |
+|  Iris-virginica | Iris-versicolor |
+|   Iris-setosa   |   Iris-setosa   |
+| Iris-versicolor | Iris-versicolor |
+| Iris-versicolor | Iris-versicolor |
+|  Iris-virginica |  Iris-virginica |
+|   Iris-setosa   |   Iris-setosa   |
+|  Iris-virginica |  Iris-virginica |
+| Iris-versicolor | Iris-versicolor |
+| Iris-versicolor | Iris-versicolor |
+|   Iris-setosa   |   Iris-setosa   |
+| Iris-versicolor | Iris-versicolor |
+| Iris-versicolor | Iris-versicolor |
+|  Iris-virginica |  Iris-virginica |
+|  Iris-virginica |  Iris-virginica |
+|   Iris-setosa   |   Iris-setosa   |
+| Iris-versicolor | Iris-versicolor |
+| Iris-versicolor | Iris-versicolor |
 
-You will get different results, because the way we split our data will be different each time, but the above table is shown just to give you an idea of how well our classification algorithm works. 
+Because the way we split our data will be different each time, you may get different results, but the above table is shown just to give you an idea of how well our classification algorithm works. 
+
+#### Generating a Classification Report
+
+We still would like to evaluate our algorithm numerically, rather than just visually. Especially for larger data sets, looking at the type of table above becomes impossible. Let's take a look at the confusion matrix and classification report using the following code:
+
+```python
+from sklearn.metrics import classification_report
+print(classification_report(y_test, y_pred))
+```
+
+We then get the following classification report:
+
+|                     | **precision** | **recall** | **f1-score** | **support** |
+|---------------------|:-------------:|:----------:|:------------:|:-----------:|
+|     **Iris-setosa** |      1.00     |    1.00    |     1.00     |      6      |
+| **Iris-versicolor** |      1.00     |    0.94    |     0.97     |      17     |
+|  **Iris-virginica** |      0.88     |    1.00    |     0.93     |      7      |
+|        **accuracy** |               |    0.97    |      30      |             |
+|       **macro avg** |      0.96     |    0.98    |     0.97     |      30     |
+|    **weighted avg** |      0.97     |    0.97    |     0.97     |      30     |
+
+#### Visualizing our Predictions
+
+I won't go through the details of the following code, but you should understand that it produces a [heat map](https://en.wikipedia.org/wiki/Heat_map). 
+
+```python
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
+
+clf = SVC(kernel = 'linear').fit(X_train, y_train)
+clf.predict(X_train)
+y_pred = clf.predict(X_test)
+cm = confusion_matrix(y_test, y_pred)
+cm_df = pd.DataFrame(cm,
+                     index = ['setosa','versicolor','virginica'], 
+                     columns = ['setosa','versicolor','virginica'])
+
+sns.heatmap(cm_df, annot=True)
+plt.ylabel('Actual')
+plt.xlabel('Predicted')
+plt.show()
+```
+
+Using the above code, we get the following heat map:
+
+![heatmap](heat.png)
 
 
+Using this heat map, we can make the following observations:
 
+1. All setosa flowers are correctly classified by our model. 
+2. 15 versicolor flowers are correclty classified, and two versicolor flowers are incorrectly classified as virginica flowers.
+3. All virginica flowers are correctly classified by our model.
+
+Again, your results will be slightly depending on how you split your training and test data.
 ## K-Nearest Neighbors Regression
 
 This section is under construction.
