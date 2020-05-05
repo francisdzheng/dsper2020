@@ -200,10 +200,6 @@ We then get the following classification report:
 |     **Iris-setosa** |      1.00     |    1.00    |     1.00     |      8     |
 | **Iris-versicolor** |      0.92    |    0.92   |     0.92     |      13    |
 |  **Iris-virginica** |      0.89     |    0.89    |     0.89     |      9      |
-<!-- ||||||
-|        **accuracy** |               |    0.97    |      30      |             |
-|       **macro avg** |      0.96     |    0.98    |     0.97     |      30     |
-|    **weighted avg** |      0.97     |    0.97    |     0.97     |      30     | -->
 
 #### Visualizing our Predictions
 
