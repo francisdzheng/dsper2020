@@ -209,13 +209,8 @@ We then get the following classification report:
 I won't go through the details of the following code, but you should understand that it produces a [heat map](https://en.wikipedia.org/wiki/Heat_map). 
 
 ```python
-from sklearn.svm import SVC
-from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
 
-clf = SVC(kernel = 'linear').fit(X_train, y_train)
-clf.predict(X_train)
-y_pred = clf.predict(X_test)
 cm = confusion_matrix(y_test, y_pred)
 cm_df = pd.DataFrame(cm,
                      index = ['setosa','versicolor','virginica'], 
