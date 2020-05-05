@@ -108,6 +108,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.80)
 ```
 
 #### Feature Scaling
+Now, we want to perform some [feature scaling](https://en.wikipedia.org/wiki/Feature_scaling) to normalize the range of our independent variables. 
+
 ```python
 from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
