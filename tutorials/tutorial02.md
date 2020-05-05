@@ -31,7 +31,7 @@ Additionally, we will want to use `scikit-learn` to apply the KNN algorithm on o
 We'll be able to use `scikit-learn` to help us with both our classification problems and our regression problems. 
 
 ## K-Nearest Neighbors Classification
-You can view the code for this tutorial [here](https://colab.research.google.com/drive/1sl_fXL3w_peGqUjOTp-sx__KrdkZBHoM#scrollTo=HPTRiWoHJLRh).
+You can view the code for this tutorial [here](https://colab.research.google.com/drive/10WytCrsm7kWcIjTuowVVeoI5WGjtMPqj).
 
 ### Importing Our Data Set
 For examples of KNN, the [iris data set](https://archive.ics.uci.edu/ml/datasets/Iris) from the University of California, Irvine is often used. 
