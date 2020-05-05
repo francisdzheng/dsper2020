@@ -23,7 +23,7 @@ description:
     - [10 Minutes to Pandas](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html)
 - Data Visualization
     - [Brief Matplotlib Tutorial](https://cs231n.github.io/python-numpy-tutorial/#matplotlib)
-    - [matplotlib.pyplot Tutorial](https://matplotlib.org/tutorials/introductory/pyplot.html)
+    - [Matplotlib.pyplot Tutorial](https://matplotlib.org/tutorials/introductory/pyplot.html)
     - [CSE512 from the University of Washington](https://courses.cs.washington.edu/courses/cse512/19sp/)
 
 
@@ -34,3 +34,6 @@ description:
 - T. Hastie, R. Tibshirani and J. Friedman, “The Elements of Statistical Learning: Data Mining, Inference, and Prediction” (Springer, 2009)
 
 - M. Mohri, A. Rostamizadeh and A. Talwalkar, “Foundations of Machine Learning” (The MIT Press, 2018, 2nd edition)
+
+## Data Sets
+- [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php)
