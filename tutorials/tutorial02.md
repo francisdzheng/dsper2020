@@ -18,12 +18,13 @@ nav_exclude: true
 
 ## Importing Libraries
 
-As usual, we will want to use `numpy`, `pandas`, and `matplot` to help us manipulate and visualize our data. 
+As usual, we will want to use `numpy`, `pandas`, `matplot`, `seaborn` to help us manipulate and visualize our data. 
 
 ```python
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 ```
 
 Additionally, we will want to use `scikit-learn` to apply the KNN algorithm on our data set. This is the beauty of libraries such as `scikit-learn`; we do not have to worry about the details of the algorithm's implementation and can simply use the functions the libraries provide. Later in this tutorial, we'll import functions from `scikit-learn` as we need. 
