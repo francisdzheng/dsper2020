@@ -154,36 +154,36 @@ print("actual: ", y_test)
 
 |    Predicted    |      Actual     |
 |:---------------:|:---------------:|
-|  Iris-virgnica  |  Iris-virginica |
+|  Iris-versicolor  |  Iris-versicolor |
 | Iris-versicolor | Iris-versicolor |
 |  Iris-virginica |  Iris-virginica|
-|   **Iris-versicolor**  | **Iris-virginica**|
-| Iris-versicolor | Iris-versicolor |
+|   **Iris-versicolor**  | **Iris-virginica** |
+| Iris-virginica | Iris-virginica |
+| **Iris-versicolor** | **Iris-virginica** |
+| Iris-versicolor | Iris-versicolor|
+|  Iris-virginica |  Iris-virginica |
+| Iris-setosa | Iris-setosa |
+| Iris-setosa | Iris-setosa |
 | Iris-versicolor | Iris-versicolor |
 | Iris-setosa | Iris-setosa|
+|   Iris-virginica  |   Iris-virginica   |
+|  Iris-virginica | Iris-virginica |
+|   Iris-setosa   |   Iris-setosa   |
+| Iris-versicolor| Iris-versicolor |
+| Iris-virginica | Iris-virginica |
 |  Iris-versicolor |  Iris-versicolor |
-| Iris-versicolor | Iris-versicolor |
-| Iris-virginica | Iris-virginica |
-| Iris-versicolor | Iris-versicolor |
-| Iris-versicolor | Iris-versicolor |
-|   Iris-veriscolor  |   Iris-versicolor   |
-|  Iris-setosa | Iris-setosa |
-|   Iris-setosa   |   Iris-setosa   |
-| Iris-setosa| Iris-setosa |
-| Iris-versicolor | Iris-versicolor |
-|  Iris-virginica |  Iris-virginica |
-|   Iris-setosa   |   Iris-setosa   |
-|  Iris-setosa |  Iris-setosa |
+|   Iris-virginica   |   Iris-virginica   |
+|  Iris-versicolor |  Iris-versicolor |
 | Iris-setosa | Iris-setosa |
-| Iris-virginica | Iris-virginica|
-|   Iris-versicolor   |   Iris-versicolor  |
-| Iris-setosa| Iris-setosa |
-| **Iris-virginica** | **Iris-versicolor** |
-|  Iris-virginica |  Iris-virginica |
-|  Iris-versicolor|  Iris-versicolor |
-|   Iris-versicolor  |   Iris-versicolor   |
+| Iris-virginica| Iris-virginica|
+|   Iris-setosa  |   Iris-setosa  |
+| Iris-setosa | Iris-setosa |
+| Iris-setosa | Iris-setosa |
+|  Iris-setosa |  Iris-setosa |
+|  Iris-setosa |  Iris-setosa |
+|   Iris-setosa  |   Iris-setosa   |
 | Iris-virginica| Iris-virginica |
-| Iris-virginica | Iris-virginica |
+| Iris-setosa | Iris-setosa |
 
 Because the way we split our data will be different each time, you may get different results, but the above table is shown just to give you an idea of how well our classification algorithm works. 
 
@@ -200,9 +200,9 @@ We then get the following classification report:
 
 |                     | **precision** | **recall** | **f1-score** | **support** |
 |---------------------|:-------------:|:----------:|:------------:|:-----------:|
-|     **Iris-setosa** |      1.00     |    1.00    |     1.00     |      8     |
-| **Iris-versicolor** |      0.92    |    0.92   |     0.92     |      13    |
-|  **Iris-virginica** |      0.89     |    0.89    |     0.89     |      9      |
+|     **Iris-setosa** |      1.00     |    1.00    |     1.00     |      12     |
+| **Iris-versicolor** |      0.78    |    1.00   |     0.88     |      7    |
+|  **Iris-virginica** |      1.00     |    0.82    |     0.90     |      11      |
 
 #### Visualizing our Predictions
 
@@ -224,14 +224,14 @@ plt.show()
 
 Using the above code, we get the following heat map:
 
-![heatmap](heat.png)
+![heatmap](heat.svg)
 
 
 Using this heat map, we can make the following observations:
 
-1. All setosa flowers are correctly classified by our model. 
-2. 12 versicolor flowers are correclty classified, and one versicolor flower is incorrectly classified as a virginica flower.
-3. 8 virginica flowers are correctly classified, and one virginica flower is incorrectly classified as a versicolor flower.
+1. All setosa flowers were correctly classified by our model. 
+2. All versicolor flowers were correctly classified by our model
+3. Nine virginica flowers were correctly classified, and two virginica flowers were incorrectly classified as versicolor flowers.
 
 Again, your results will be slightly depending on how you split your training and test data.  
 
