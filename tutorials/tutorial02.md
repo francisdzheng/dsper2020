@@ -31,8 +31,24 @@ Additionally, we will want to use `scikit-learn` to apply the KNN algorithm on o
 We'll be able to use `scikit-learn` to help us with both our classification problems and our regression problems. 
 
 ## K-Nearest Neighbors Classification
+You can view the code for this tutorial [here](https://colab.research.google.com/drive/1sl_fXL3w_peGqUjOTp-sx__KrdkZBHoM#scrollTo=HPTRiWoHJLRh).
+
 ### Importing Our Data Set
-For examples of KNN, the [iris data set](https://archive.ics.uci.edu/ml/datasets/Iris) from the University of California, Irvine is often used. Let's import the data set as a `pandas` dataframe:
+For examples of KNN, the [iris data set](https://archive.ics.uci.edu/ml/datasets/Iris) from the University of California, Irvine is often used. 
+
+In this tutorial, we will be attempting to classify types of irises using the following four attributes:
+
+1. Sepal length
+2. Sepal width
+3. Petal length
+4. Petal width
+
+There are three types of irises: 
+1. Iris Setosa
+2. Iris Versicolor
+3. Iris Virginica
+
+Let's import the data set as a `pandas` dataframe:
 
 ```python
 df = pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data")
@@ -137,34 +153,34 @@ print("actual: ", y_test)
 |:---------------:|:---------------:|
 |  Iris-virgnica  |  Iris-virginica |
 | Iris-versicolor | Iris-versicolor |
+|  Iris-virginica |  Iris-virginica|
+|   **Iris-versicolor**  | **Iris-virginica**|
+| Iris-versicolor | Iris-versicolor |
+| Iris-versicolor | Iris-versicolor |
+| Iris-setosa | Iris-setosa|
+|  Iris-versicolor |  Iris-versicolor |
+| Iris-versicolor | Iris-versicolor |
+| Iris-virginica | Iris-virginica |
+| Iris-versicolor | Iris-versicolor |
+| Iris-versicolor | Iris-versicolor |
+|   Iris-veriscolor  |   Iris-versicolor   |
+|  Iris-setosa | Iris-setosa |
+|   Iris-setosa   |   Iris-setosa   |
+| Iris-setosa| Iris-setosa |
+| Iris-versicolor | Iris-versicolor |
 |  Iris-virginica |  Iris-virginica |
 |   Iris-setosa   |   Iris-setosa   |
-| Iris-versicolor | Iris-versicolor |
-| Iris-versicolor | Iris-versicolor |
-| Iris-versicolor | Iris-versicolor |
+|  Iris-setosa |  Iris-setosa |
+| Iris-setosa | Iris-setosa |
+| Iris-virginica | Iris-virginica|
+|   Iris-versicolor   |   Iris-versicolor  |
+| Iris-setosa| Iris-setosa |
+| **Iris-virginica** | **Iris-versicolor** |
 |  Iris-virginica |  Iris-virginica |
-| Iris-versicolor | Iris-versicolor |
-| Iris-versicolor | Iris-versicolor |
-| Iris-versicolor | Iris-versicolor |
-| Iris-versicolor | Iris-versicolor |
-|   Iris-setosa   |   Iris-setosa   |
-|  Iris-virginica | Iris-versicolor |
-|   Iris-setosa   |   Iris-setosa   |
-| Iris-versicolor | Iris-versicolor |
-| Iris-versicolor | Iris-versicolor |
-|  Iris-virginica |  Iris-virginica |
-|   Iris-setosa   |   Iris-setosa   |
-|  Iris-virginica |  Iris-virginica |
-| Iris-versicolor | Iris-versicolor |
-| Iris-versicolor | Iris-versicolor |
-|   Iris-setosa   |   Iris-setosa   |
-| Iris-versicolor | Iris-versicolor |
-| Iris-versicolor | Iris-versicolor |
-|  Iris-virginica |  Iris-virginica |
-|  Iris-virginica |  Iris-virginica |
-|   Iris-setosa   |   Iris-setosa   |
-| Iris-versicolor | Iris-versicolor |
-| Iris-versicolor | Iris-versicolor |
+|  Iris-versicolor|  Iris-versicolor |
+|   Iris-versicolor  |   Iris-versicolor   |
+| Iris-virginica| Iris-virginica |
+| Iris-virginica | Iris-virginica |
 
 Because the way we split our data will be different each time, you may get different results, but the above table is shown just to give you an idea of how well our classification algorithm works. 
 
@@ -181,12 +197,13 @@ We then get the following classification report:
 
 |                     | **precision** | **recall** | **f1-score** | **support** |
 |---------------------|:-------------:|:----------:|:------------:|:-----------:|
-|     **Iris-setosa** |      1.00     |    1.00    |     1.00     |      6      |
-| **Iris-versicolor** |      1.00     |    0.94    |     0.97     |      17     |
-|  **Iris-virginica** |      0.88     |    1.00    |     0.93     |      7      |
+|     **Iris-setosa** |      1.00     |    1.00    |     1.00     |      8     |
+| **Iris-versicolor** |      0.92    |    0.92   |     0.92     |      13    |
+|  **Iris-virginica** |      0.89     |    0.89    |     0.89     |      9      |
+<!-- ||||||
 |        **accuracy** |               |    0.97    |      30      |             |
 |       **macro avg** |      0.96     |    0.98    |     0.97     |      30     |
-|    **weighted avg** |      0.97     |    0.97    |     0.97     |      30     |
+|    **weighted avg** |      0.97     |    0.97    |     0.97     |      30     | -->
 
 #### Visualizing our Predictions
 
@@ -219,10 +236,11 @@ Using the above code, we get the following heat map:
 Using this heat map, we can make the following observations:
 
 1. All setosa flowers are correctly classified by our model. 
-2. 15 versicolor flowers are correclty classified, and two versicolor flowers are incorrectly classified as virginica flowers.
-3. All virginica flowers are correctly classified by our model.
+2. 12 versicolor flowers are correclty classified, and one versicolor flower is incorrectly classified as a virginica flower.
+3. 8 virginica flowers are correctly classified, and one virginica flower is incorrectly classified as a versicolor flower.
 
-Again, your results will be slightly depending on how you split your training and test data.
+Again, your results will be slightly depending on how you split your training and test data.  
+
 ## K-Nearest Neighbors Regression
 
 This section is under construction.
