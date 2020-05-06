@@ -1,11 +1,11 @@
 ---
 layout: page
-title: K-Nearest Neighbors
+title: k-Nearest Neighbors
 parent: Tutorials
 nav_exclude: true
 ---
 
-# K-Nearest Neighbors
+# k-Nearest Neighbors | k近傍法
 {:.no_toc}
 
 ## Table of contents
@@ -31,7 +31,7 @@ Additionally, we will want to use `scikit-learn` to apply the KNN algorithm on o
 
 We'll be able to use `scikit-learn` to help us with both our classification problems and our regression problems. 
 
-## K-Nearest Neighbors Classification
+## k-Nearest Neighbors Classification
 You can view the code for this tutorial [here](https://colab.research.google.com/drive/1xkIOJoiKhGePzu0jVGvUzxkOFjicFuLS).
 
 ### Importing Our Data Set
@@ -235,6 +235,6 @@ Using this heat map, we can make the following observations:
 
 Again, your results will be slightly depending on how you split your training and test data.  
 
-## K-Nearest Neighbors Regression
+## k-Nearest Neighbors Regression
 
 This section is under construction.

@@ -1,6 +1,6 @@
 ---
 week: 2
-title: K-Nearest Neighbors
+title: k-Nearest Neighbors
 days:
   - date: 2020-05-05
     events:
