@@ -38,3 +38,4 @@ description:
 ## Data Sets
 - [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php)
 - [Google Dataset Search](https://datasetsearch.research.google.com/)
+- [Google Public Data Explorer](https://www.google.com/publicdata/directory)
