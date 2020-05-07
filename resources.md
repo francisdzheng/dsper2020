@@ -31,9 +31,10 @@ description:
 
 - [G. James, D. Witten, T. Hastie and R. Tibshirani, “An Introduction to Statistical Learning, with applications in R” (Springer, 2013)](http://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf)
 
-- T. Hastie, R. Tibshirani and J. Friedman, “The Elements of Statistical Learning: Data Mining, Inference, and Prediction” (Springer, 2009)
+- [T. Hastie, R. Tibshirani and J. Friedman, “The Elements of Statistical Learning: Data Mining, Inference, and Prediction” (Springer, 2009)](https://web.stanford.edu/~hastie/ElemStatLearn/)
 
-- M. Mohri, A. Rostamizadeh and A. Talwalkar, “Foundations of Machine Learning” (The MIT Press, 2018, 2nd edition)
+- [M. Mohri, A. Rostamizadeh and A. Talwalkar, “Foundations of Machine Learning” (The MIT Press, 2018, 2nd edition)](https://cs.nyu.edu/~mohri/mlbook/)
 
 ## Data Sets
 - [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php)
+- [Google Dataset Search](https://datasetsearch.research.google.com/)
