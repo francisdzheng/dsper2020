@@ -4,7 +4,7 @@ title: Getting Started
 days:
   - date: 2020-04-28
     events:
-      "[Setting up your environment](../tutorials/tutorial01/#setting-up-your-environment)":
+      "[Setting up your environment](../tutorials/tutorial01/)":
   # - date: TBA
   #   events:
   #     "[Selecting a data set](#)":

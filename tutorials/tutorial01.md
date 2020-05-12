@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Getting Started
+title: Setting Up Your Environment
 parent: Tutorials
 nav_exclude: true
 ---
 
-# Getting Started
+# Setting Up Your Environment
 {:.no_toc}
 
 ## Table of contents
@@ -16,38 +16,36 @@ nav_exclude: true
 
 ---
 
-## Setting up your environment
-
-### Installing a terminal
+## Installing a terminal
 
 A terminal (also known as the command line or console) is a program that allows you to type and execute text-based commands to control actions on your computer. 
 
-#### Windows
+### Windows
 
 There are several options for your terminal, but please install [Git-Bash](https://git-scm.com/download/win) for this class. 
 
-#### macOS / Linux
+### macOS / Linux
 
 If you are using macOS or Linux, you already have a program called `Terminal`.
 
-### Installing Anaconda
+## Installing Anaconda
 
 Anaconda is a Python and R distribution that contains various packages used in data science and machine learning. It also includes an environment management system called [Conda](https://docs.conda.io/en/latest/), which allows you to easily install/update packages and create/load environments. This allows you to, for example, work with different versions of Python on the same computer by creating a separate environment for each.
 
 Please download Anaconda [here](https://www.anaconda.com/products/individual#Downloads). 
 
-### Testing your environment
+## Testing your environment
 
 Let's make sure everything is set up correctly and get more familiar with using our terminal. 
 
-#### Using the terminal
+### Using the terminal
 First, open your terminal. You should get something like the following:
 
 ![terminal1](terminal1.png)
 
 Don't worry if your terminal looks slightly different. However, make sure that you see either a dollar sign ($) or a percent sign (%), waiting for you to type a command.
 
-##### Directories
+#### Directories
 
 We will first have our terminal show us a list of all files and folders in the current directory. Try typing `ls` into the terminal:	
 
@@ -58,7 +56,7 @@ You should now see all the contents of your home directory. For me, I have the f
 
 ![terminal2](terminal2.png)
 
-##### Moving between directories
+#### Moving between directories
 Choose a place on your computer where you would like to store your files for this class. Let's make a folder called `dsper` in your `Documents` folder. 
 
 First, we will need to move to the `Documents` folder, using the `cd` command. Let's type the following into our terminal:
@@ -82,7 +80,7 @@ Now, if you type `ls` (while still in the `Documents` folder), you should see yo
 To move to the parent directory of whatever directory you're in, you can use `cd ..`. To move to your home directory, use `cd ~`.
 
 
-#### Creating a new Jupyter Notebook
+### Creating a new Jupyter Notebook
 
 On your terminal, use `cd` to move into `dsper`, or the folder you would like to work in for this class. Jupyter Notebook is a web application that allows us to work with live code and data visualizations right in our browser. 
 
@@ -107,9 +105,3 @@ You now have created a new Jupyter Notebook! Type `print('Hello World')` into th
 To shut down your Jupyter Notebook server, type `ctrl + c` into your terminal. 
 
 You will complete your homework assignments in these notebooks. 
-
-<!-- ## Selecting a data set
-
-## Cleaning data
-
-## Getting familiar with your data -->
