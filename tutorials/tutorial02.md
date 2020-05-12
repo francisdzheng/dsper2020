@@ -1,11 +1,11 @@
 ---
 layout: page
-title: k-Nearest Neighbors
+title: k-Nearest Neighbors Classification
 parent: Tutorials
 nav_exclude: true
 ---
 
-# k-Nearest Neighbors | k近傍法
+# k-Nearest Neighbors Classification
 {:.no_toc}
 
 ## Table of contents
@@ -15,6 +15,8 @@ nav_exclude: true
 {:toc}
 
 ---
+
+You can view the code for this tutorial [here](https://colab.research.google.com/drive/1xkIOJoiKhGePzu0jVGvUzxkOFjicFuLS).
 
 ## Importing Libraries
 
@@ -31,10 +33,7 @@ Additionally, we will want to use `scikit-learn` to apply the KNN algorithm on o
 
 We'll be able to use `scikit-learn` to help us with both our classification problems and our regression problems. 
 
-## k-Nearest Neighbors Classification
-You can view the code for this tutorial [here](https://colab.research.google.com/drive/1xkIOJoiKhGePzu0jVGvUzxkOFjicFuLS).
-
-### Importing Our Data Set
+## Importing Our Data Set
 For examples of KNN, the [iris data set](https://archive.ics.uci.edu/ml/datasets/Iris) from the University of California, Irvine is often used. 
 
 In this tutorial, we will be attempting to classify types of irises using the following four attributes:
@@ -65,7 +64,7 @@ Let's take a small look at what our data set looks like, using `df.head()`, whic
 | **3** | 5.0 | 3.6 | 1.4 | 0.2 | Iris-setosa |
 | **4** | 5.4 | 3.9 | 1.7 | 0.4 | Iris-setosa |
 
-### Preprocessing 
+## Preprocessing 
 
 Notice that our data set does not have proper column names. Thus, we actually need to add the columm names on our own so that our dataframe is easier to read and work with. Let's try importing our data set one more time, using `names` from [`read_csv`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html):
 
@@ -91,7 +90,7 @@ Now, let's take a look at our dataframe using `df.head()` again:
 | **3** |      4.6     |     3.1     |      1.5     |     0.2     | Iris-setosa |
 | **4** |      5.0     |     3.6     |      1.4     |     0.2     | Iris-setosa |
 
-#### Defining Attributes and Labels
+### Defining Attributes and Labels
 
 Now, we need to split our data set into its attributes and labels, using [`iloc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html):
 
@@ -99,7 +98,7 @@ Now, we need to split our data set into its attributes and labels, using [`iloc`
 X = df.iloc[:, :-1] #attributes, iloc[:, :-1] means until the last column
 y = df['type'] #labels
 ```
-#### Splitting Training Data and Testing Data
+### Splitting Training Data and Testing Data
 
 Let's split our data into 80% training data and 20% testing data. We can do this using [`train_test_split`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) and its `train_size` parameter:
 
@@ -108,7 +107,7 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.80)
 ```
 
-#### Feature Scaling
+### Feature Scaling
 Now, we want to perform some [feature scaling](https://en.wikipedia.org/wiki/Feature_scaling) to normalize the range of our independent variables. 
 
 ```python
@@ -120,7 +119,7 @@ X_train = scaler.transform(X_train)
 X_test = scaler.transform(X_test)
 ```
 
-### Fitting Data and Predicting Data
+## Fitting Data and Predicting Data
 
 Now, we're finally ready to import the [KNN classifier algorithm from `scikit_learn`](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html):
 
@@ -143,7 +142,7 @@ y_pred = classifier.predict(X_test)
 
 Now, our model can take attributes (sepal-length, sepal-width, petal-length, and petal-width) and predict which type of iris it is. We are doing this using our test data, `X_test`.
 
-### Evaluating our Algorithm
+## Evaluating our Algorithm
 
 We do not have too many data points, so we can first just compare our predictions with our test data visually:
 
@@ -187,7 +186,7 @@ print("actual: ", y_test)
 
 Because the way we split our data will be different each time, you may get different results, but the above table is shown just to give you an idea of how well our classification algorithm works. 
 
-#### Generating a Classification Report
+### Generating a Classification Report
 
 We still would like to evaluate our algorithm numerically, rather than just visually. Especially for larger data sets, looking at the type of table above becomes impossible. Let's take a look at the confusion matrix and classification report using the following code:
 
@@ -204,7 +203,7 @@ We then get the following classification report:
 | **Iris-versicolor** |      0.78    |    1.00   |     0.88     |      7    |
 |  **Iris-virginica** |      1.00     |    0.82    |     0.90     |      11      |
 
-#### Visualizing our Predictions
+### Visualizing our Predictions
 
 I won't go through the details of the following code, but you should understand that it produces a [heat map](https://en.wikipedia.org/wiki/Heat_map). 
 
@@ -234,7 +233,3 @@ Using this heat map, we can make the following observations:
 3. Nine virginica flowers were correctly classified, and two virginica flowers were incorrectly classified as versicolor flowers.
 
 Again, your results will be slightly depending on how you split your training and test data.  
-
-## k-Nearest Neighbors Regression
-
-This section is under construction.

@@ -4,7 +4,7 @@ title: k-Nearest Neighbors
 days:
   - date: 2020-05-05
     events:
-      "[KNN Classification](../tutorials/tutorial02/#k-nearest-neighbors-classification)":
+      "[KNN Classification](../tutorials/tutorial02/)":
   # - date: TBA
   #   events:
   #     "[Selecting a data set](#)":
