@@ -24,7 +24,7 @@ Bootstrap is a method used for estimating a population parameter by repeatedly d
 
 Image Source: [An Introduction to the Bootstrap Method](https://towardsdatascience.com/an-introduction-to-the-bootstrap-method-58bcb51b4d60)
 
-An example of bootstrapping measuring the sdf asdfaf HELLO
+An example of bootstrapping measuring the sdf asdfaf HELLO my name is asdf James.
 
 <!-- 
 You can read more about bootstrapping [on Wikipedia](https://en.wikipedia.org/wiki/Bootstrapping_(statistics).) -->
