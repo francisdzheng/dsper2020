@@ -194,7 +194,7 @@ Though we cannot direclty measure the *true* coefficient, we can construct a con
 np.percentile(theta_hat_sampling, 2.5), np.percentile(theta_hat_sampling, 97.5)
 ```
 
-> (293.1226388451281, 316.6818092736611)
+> (293.00726778644975, 316.45040166379727)
 
 
 <!-- Columns:
