@@ -35,6 +35,8 @@ Please refer to the slides form Lecture 04](https://piazza.com/class_profile/get
 
 <!-- ## Bootstrapping for Linear Regression -->
 
+You can view the code for this tutorial [here](https://colab.research.google.com/drive/1Nfz2tunq7jZjQVLptUHAT2izQ7WXmN70).
+
 In Homework 02, you fitted a linear regression model for your data.
 
 Now, we would like to construct conﬁdence intervals for the estimated coefﬁcients and perhaps even infer the true coefficients of our model. Bootstrap is a computational method that allows us to calculate standard errors and confidence intervals for our parameters.
