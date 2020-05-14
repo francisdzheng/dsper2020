@@ -189,7 +189,7 @@ plt.show()
 ![bt](bt.svg)
 
 
-Though we cannot direclty measure the *true* coefficient, we can construct a confidence interval in the account for variability in the *sample* coefficient. If we construct a 95% confidence interval, we need to look at the 2.5th percentile and 97.5th percentile as our endpoints: 
+Though we cannot direclty measure the *true* coefficient, we can construct a confidence interval to account for variability in the *sample* coefficient. If we construct a 95% confidence interval, we need to look at the 2.5th percentile and 97.5th percentile as our endpoints: 
 
 
 ```python
