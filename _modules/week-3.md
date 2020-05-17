@@ -5,7 +5,7 @@ days:
 #   - date: 2020-05-12
 #     events:
 #       "[Bootstrap](../tutorials/tutorial03/)":
-  - date: TBA
+  - date: 2020-05-14
     events:
       "[Bootstrap](#)":
   # - date: TBA
