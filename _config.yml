@@ -24,6 +24,9 @@ exclude: ["Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
 
 ga_tracking: UA-91106496-1
 
+# kramdown:
+#   math_engine: mathjax
+
 # Theme settings
 remote_theme: pmarsceill/just-the-docs@v0.2.8
 color_scheme: light

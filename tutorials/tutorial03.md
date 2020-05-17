@@ -3,6 +3,7 @@ layout: page
 title: Bootstrap
 parent: Tutorials
 nav_exclude: true
+latex: true
 ---
 
 # Bootstrapping for Linear Regression
@@ -15,25 +16,6 @@ nav_exclude: true
 {:toc}
 
 ---
-
-<!-- ## What is bootstrap?
-
-Bootstrap is a method used for estimating a population parameter by repeatedly drawing distinct samples, with replacement, from the population. 
-
-![bootstrap1](bootstrap1.png)
-
-Image Source: [An Introduction to the Bootstrap Method](https://towardsdatascience.com/an-introduction-to-the-bootstrap-method-58bcb51b4d60)
-
-> *The original sample approximates the population from which it was drawn. So resamples from this sample approximate what we would get if we took many samples from the population. The bootstrap distribution of a statistic, based on many resamples, approximates the sampling distribution of the statistic, based on many samples.*
-
-> Source: Mathematical Statistics with Resampling and R Laura M. Chihara, ‎Tim C. Hesterberg - 2012
-
-An example of bootstrapping measuring 
-
-
-Please refer to the slides form Lecture 04](https://piazza.com/class_profile/get_resource/k8pcxfiwkxf2ec/k9jgjkfppry4vv) for more on bootstrap.  -->
-
-<!-- ## Bootstrapping for Linear Regression -->
 
 You can view the code for this tutorial [here](https://colab.research.google.com/drive/1Nfz2tunq7jZjQVLptUHAT2izQ7WXmN70).
 
@@ -197,6 +179,9 @@ np.percentile(theta_hat_sampling, 2.5), np.percentile(theta_hat_sampling, 97.5)
 ```
 
 > (293.00726778644975, 316.45040166379727)
+
+
+HERE IS SOME LATEX: 1 $$2 + 3$$ whys $$c = \pm\sqrt{a^2 + b^2}$$
 
 
 <!-- Columns:
