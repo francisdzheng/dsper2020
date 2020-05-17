@@ -19,9 +19,11 @@ latex: true
 
 You can view the code for this tutorial [here](https://colab.research.google.com/drive/1Nfz2tunq7jZjQVLptUHAT2izQ7WXmN70).
 
-In Homework 02, you fitted a linear regression model for your data.
+In Homework 02, you fitted a linear regression model for your data, which may have looked something like this:
 
-Now, we would like to construct conﬁdence intervals for the estimated coefﬁcients and perhaps even infer the true coefficients of our model. Bootstrap is a computational method that allows us to calculate standard errors and confidence intervals for our parameters.
+\\[f_{\hat{\theta}}(x) = \hat{\theta_0} + \hat{\theta_1}x_1 + \cdots + \hat{\theta_p}x_p\\]
+
+Now, we would like to construct conﬁdence intervals for the estimated coefﬁcients \\(\hat{\theta_0}, \hat{\theta_1}, \cdots \hat{\theta_p} \\) and perhaps infer the true coefficients of our model. Bootstrap is a computational method that allows us to calculate standard errors and confidence intervals for our parameters.
 
 ## Importing Libraries
 
