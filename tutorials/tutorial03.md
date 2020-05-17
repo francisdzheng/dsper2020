@@ -180,10 +180,6 @@ np.percentile(theta_hat_sampling, 2.5), np.percentile(theta_hat_sampling, 97.5)
 
 > (293.00726778644975, 316.45040166379727)
 
-
-HERE IS SOME LATEX: 1 $$2 + 3$$ whys $$c = \pm\sqrt{a^2 + b^2}$$
-
-
 <!-- Columns:
 
 - `id`

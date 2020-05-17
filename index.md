@@ -4,6 +4,7 @@ title: Home
 nav_order: 0
 description: >-
     Data Science for Practical Economic Research
+latex: true
 ---
 
 # {{ site.description }}
@@ -18,7 +19,7 @@ description: >-
 
 ## Important information
 
-This website serves as a supplement to Professor Konstantin Kucheryavyy's Data Science for Practical Economic Research course. 
+This website serves as a supplement to Professor Konstantin Kucheryavyy's Data Science for Practical Economic Research course.
 
 - Please check [Piazza](https://piazza.com/class/k8pcxfiwkxf2ec) regularly for announcements. 
 - Lectures are held every Tuesday, 14:55 - 16:40 (4限). The Zoom link can be found on UTAS. 
