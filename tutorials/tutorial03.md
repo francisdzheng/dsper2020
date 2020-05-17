@@ -108,7 +108,7 @@ plt.scatter(x=df["yr_built"], y=df["price"])
 
 ## Fitting the Model
 
-First, let's organize our data into X, REPLACE, and y, what we're trying to predict (price, in our case).
+First, let's organize our data into X and y, what we're trying to predict (price, in our case).
 
 ```python
 X = df.loc[:, ["sqft_living", "yr_built"]]
