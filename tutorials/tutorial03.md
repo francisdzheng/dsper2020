@@ -116,7 +116,7 @@ y = df.loc[:, "price"]
 ```
 
 > Note: 
-> Visually, we can see that the age of the home does not seem to be strongly correlated with the price of the home. In a real data analysis, we may want to investigate further or remove this from our regression. 
+> Visually, we can see that the age of the home does not seem to be strongly correlated with the price of the home. In a real data analysis, we may want to investigate further and/or remove this from our regression. 
 
 
 Now, let's use `scikit-learn` to perform linear regression (there's no need to write the code for this on our own):
