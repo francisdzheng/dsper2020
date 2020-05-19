@@ -7,7 +7,7 @@ days:
 #       "[Bootstrap](../tutorials/tutorial03/)":
   - date: 2020-05-14
     events:
-      "[Bootstrap](#)":
+      "[Bootstrap](../tutorials/tutorial03/)":
   # - date: TBA
   #   events:
   #     "[Cleaning data](#)":
