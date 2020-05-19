@@ -69,6 +69,22 @@ df.head()
 | **3** |      604000.0     |     1960     |      1965     |
 | **4** |      510000.0     |     1680     |      1987    | 
 
+Instead of looking at the year built, we'll look at the age of the house:
+
+```python
+df["age of house"] = 2015 - df["yr_built"]
+```
+
+|       | price | sqft_living | yr_built | age of house |
+|:-----:|:------------:|:-----------:|:------------:|:------------:|
+| **0** |      221900.0    |     1180     |      1955     | 60 |
+| **1** |      538000.0     |     2570     |      1951    | 64| 
+| **2** |      180000.0    |     770     |      1933    | 82 | 
+| **3** |      604000.0     |     1960     |      1965     | 50 |
+| **4** |      510000.0     |     1680     |      1987    | 28 |
+
+
+In reality, there's also a column `yr_renovated` in the original dataset, but for simplicity, we will ignore this in this tutorial. 
 
 Let's also create scatter plots to visualize the relationships between our variables:
 
@@ -82,12 +98,12 @@ plt.scatter(x=df["sqft_living"], y=df["price"])
 
 
 ```python
-plt.xlabel("yr_built")
+plt.xlabel("age of house")
 plt.ylabel("price")
-plt.scatter(x=df["yr_built"], y=df["price"])
+plt.scatter(x=df["age of house"], y=df["price"])
 ```
 
-![yrbyprice](yrbyprice.svg)
+![ageprice](ageprice.svg)
 
 
 ## Fitting the Model
@@ -95,7 +111,7 @@ plt.scatter(x=df["yr_built"], y=df["price"])
 First, let's organize our data into X and y, what we're trying to predict (price, in our case).
 
 ```python
-X = df.loc[:, ["sqft_living", "yr_built"]]
+X = df.loc[:, ["sqft_living", "age of house"]]
 y = df.loc[:, "price"]
 ```
 
@@ -110,15 +126,15 @@ linear_model.fit(X, y)
 print("""
 intercept: %.2f
 sqft_living: %.2f
-yr_built: %.2f
+age of house: %.2f
 """ % (tuple([linear_model.intercept_]) + tuple(linear_model.coef_)))
 ```
 
-> intercept: 4545840.77
+> intercept: -196929.07
 
 > sqft_living:    304.57
 
-> yr_built:    -2353.73
+> age of house:  2353.73
 
 Above are the (estimates of) coefficients we get from our linear regression model. Now, we want to bootstrap our observations. 
 
@@ -154,7 +170,7 @@ def sqft_coeff(data_array):
 
     return theta_sqft
 
-data_array = df.loc[:,  ["price", "yr_built", "sqft_living"]].values
+data_array = df.loc[:,  ["price", "age of house", "sqft_living"]].values
 
 theta_hat_sampling = bootstrap(data_array, sqft_coeff)
 ```
@@ -180,7 +196,7 @@ Though we cannot direclty measure the *true* coefficient, we can construct a con
 np.percentile(theta_hat_sampling, 2.5), np.percentile(theta_hat_sampling, 97.5)
 ```
 
-> (293.00726778644975, 316.45040166379727)
+> (293.0643343501463, 316.5597894314288)
 
 <!-- Columns:
 
