@@ -19,7 +19,7 @@ latex: true
 
 In this tutorial, we will write several functions to select and evaluate subsets of features of baseball players used to predict salary. 
 
-Much of this code was provided by Professor Kucheryavyy; I have broken the code down into a few smaller pieces and added some comments and explanations that should help your understanding. You can follow along [here](https://colab.research.google.com/drive/1XaYrQ6DcWPZyn5qE0CtC-RkiZykchhL-).
+Much of this code was provided by Professor Kucheryavyy; I have broken the code down into a few smaller pieces and added some comments and explanations that should help your understanding. You can view the code for this tutorial [here](https://colab.research.google.com/drive/1XaYrQ6DcWPZyn5qE0CtC-RkiZykchhL-).
 
 ## Importing Libraries
 
@@ -88,8 +88,6 @@ hittersDF.dropna(inplace=True)
 
 > Note: 
 > `inplace=True` means that we are modifying the original dataframe itself. We are not creating a copy with our new changes. 
-
-
 
 We want to convert categorial variables into dummy variables. Conversion into dummy variables allows us to perform regression for quanlitative variables. Let's run the following: 
 
@@ -364,7 +362,9 @@ display(X[0:10])
 
 <!-- In total, it contains 263 rows and 20 columns (remember that you can do this with something like `df.shape`!) -->
 
-## Subset Selection Functions
+## Best Subset Selection
+
+### Best Subset Selection Functions
 
 Now, let's write a couple functions that will help us select the best subset of our features. 
 
@@ -399,6 +399,8 @@ def findBestSubset(X, y, max_subset_size):
 
     return([best_subsets, best_mses])
 ```
+
+### Executing Best Subset Selection
 
 We'll now use this function to perform our subset selection. At the very end, we will produce some metrics that will help us evaluate our selections:
 
@@ -452,6 +454,8 @@ for idx_set in range(len(best_subsets)):
     bics[idx_set] = result.bic
     aics[idx_set] = result.aic
 ```
+
+### Plotting
 
 As always, we want to create some plots so that we can better visaulize and understand what's going on. To do this, we'll first write a function that takes in our metrics: 
 
