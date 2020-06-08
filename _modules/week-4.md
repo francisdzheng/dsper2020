@@ -5,7 +5,7 @@ days:
 #   - date: 2020-05-12
 #     events:
 #       "[Bootstrap](../tutorials/tutorial03/)":
-  - date: 2020-05-14
+  - date: 2020-06-08
     events:
       "[Subset Selection Methods](../tutorials/tutorial04/)":
   # - date: TBA
