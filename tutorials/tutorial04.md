@@ -376,7 +376,7 @@ def findBestSubsetFixedSize(X, y, subset_size):
     best_subset = []
     best_mse = -1
     for idx_set in itertools.combinations(range(features_nmb), subset_size):
-        X_subset = X[:, list(idx_set)]
+        X_subset = X.iloc[:, list(idx_set)]
         lin_reg = LinearRegression(fit_intercept=True, normalize=False)
         lin_reg.fit(X_subset, y)
         yhat = lin_reg.predict(X_subset)
