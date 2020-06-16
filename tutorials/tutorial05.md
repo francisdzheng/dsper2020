@@ -17,7 +17,9 @@ latex: true
 
 ---
 
-In this tutorial, we will be exploring two linear regression models (ridge regression and lasso regression) and a regression analysis technique known as principal component regression (PCR). You can view the code for this tutorial [here](https://colab.research.google.com/drive/1cP94zKrOUkBTW200q-OGePRbjl2BRL3L).
+In this tutorial, we will be exploring two linear regression models (ridge regression and lasso regression) and a regression analysis technique known as principal component regression (PCR). 
+
+Much of this code was provided by Professor Kucheryavyy; I have broken the code down into a few smaller pieces and added some comments and explanations that should help your understanding. You can view the code for this tutorial [here](https://colab.research.google.com/drive/1cP94zKrOUkBTW200q-OGePRbjl2BRL3L).
 
 We'll be using the same dataset as before, so please refer [the previous tutorial](https://franciszheng.com/dsper2020/tutorials/tutorial04/#our-dataset) if you'd like to read about the dataset once more. 
 
