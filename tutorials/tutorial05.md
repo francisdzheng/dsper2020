@@ -93,7 +93,7 @@ y = hittersDF.Salary
 
 ## Creating Data Pipelines
 
-[Using `scikit-learn`](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html), we create data pipelines to clean, scale, and streamline our data:
+Using `scikit-learn`, we can create data [pipelines](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html) to clean, scale, and streamline our data:
 
 
 
