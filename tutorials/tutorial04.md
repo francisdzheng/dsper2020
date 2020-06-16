@@ -19,7 +19,7 @@ latex: true
 
 In this tutorial, we will write several functions to select and evaluate subsets of features of baseball players used to predict salary. 
 
-Much of this code was provided by Professor Kucheryavyy; I have broken the code down into a few smaller pieces and added some comments and explanations that should help your understanding. You can view the code for this tutorial [here](https://colab.research.google.com/drive/1XaYrQ6DcWPZyn5qE0CtC-RkiZykchhL-).
+Much of this code was provided by Professor Kucheryavyy; I have broken the code down into a few smaller pieces and added some comments and explanations that should help your understanding. You can view the code for this tutorial [here](https://colab.research.google.com/drive/1aEd44IohTlLCpqu1poGDXpM6AzdDf9-K).
 
 ## Importing Libraries
 
