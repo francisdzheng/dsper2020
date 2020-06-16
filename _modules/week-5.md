@@ -7,7 +7,7 @@ days:
 #       "[Bootstrap](../tutorials/tutorial03/)":
   - date: 2020-06-16
     events:
-      "[Ridge and Lasso Regression]()":
+      "[Ridge and Lasso Regression](../tutorials/tutorial05/)":
   # - date: TBA
   #   events:
   #     "[Cleaning data](#)":
