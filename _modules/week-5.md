@@ -1,13 +1,13 @@
 ---
 week: 5
-title: Ridge, Lasso, and PCR
+title: Ridge Regression, Lasso, and PCR
 days:
 #   - date: 2020-05-12
 #     events:
 #       "[Bootstrap](../tutorials/tutorial03/)":
   - date: 2020-06-16
     events:
-      "[Ridge, Lasso, and PCR]()":
+      "[Ridge Regression, Lasso, and PCR]()":
   # - date: TBA
   #   events:
   #     "[Cleaning data](#)":
