@@ -1,6 +1,7 @@
 ---
 week: 5
 title: Ridge, Lasso, and PCR
+days:
 #   - date: 2020-05-12
 #     events:
 #       "[Bootstrap](../tutorials/tutorial03/)":
