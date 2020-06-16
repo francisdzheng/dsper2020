@@ -19,7 +19,7 @@ latex: true
 
 In this tutorial, we will write several functions to select and evaluate subsets of features of baseball players used to predict salary. 
 
-Much of this code was provided by Professor Kucheryavyy; I have broken the code down into a few smaller pieces and added some comments and explanations that should help your understanding. You can follow along [here]().
+Much of this code was provided by Professor Kucheryavyy; I have broken the code down into a few smaller pieces and added some comments and explanations that should help your understanding. You can view the code for this tutorial [here](https://colab.research.google.com/drive/1XaYrQ6DcWPZyn5qE0CtC-RkiZykchhL-).
 
 ## Importing Libraries
 
@@ -88,8 +88,6 @@ hittersDF.dropna(inplace=True)
 
 > Note: 
 > `inplace=True` means that we are modifying the original dataframe itself. We are not creating a copy with our new changes. 
-
-
 
 We want to convert categorial variables into dummy variables. Conversion into dummy variables allows us to perform regression for quanlitative variables. Let's run the following: 
 
@@ -364,7 +362,9 @@ display(X[0:10])
 
 <!-- In total, it contains 263 rows and 20 columns (remember that you can do this with something like `df.shape`!) -->
 
-## Subset Selection Functions
+## Best Subset Selection
+
+### Best Subset Selection Functions
 
 Now, let's write a couple functions that will help us select the best subset of our features. 
 
@@ -376,7 +376,7 @@ def findBestSubsetFixedSize(X, y, subset_size):
     best_subset = []
     best_mse = -1
     for idx_set in itertools.combinations(range(features_nmb), subset_size):
-        X_subset = X[:, list(idx_set)]
+        X_subset = X.iloc[:, list(idx_set)]
         lin_reg = LinearRegression(fit_intercept=True, normalize=False)
         lin_reg.fit(X_subset, y)
         yhat = lin_reg.predict(X_subset)
@@ -399,6 +399,8 @@ def findBestSubset(X, y, max_subset_size):
 
     return([best_subsets, best_mses])
 ```
+
+### Executing Best Subset Selection
 
 We'll now use this function to perform our subset selection. At the very end, we will produce some metrics that will help us evaluate our selections:
 
@@ -433,13 +435,11 @@ else:
                     [0, 1, 2, 3, 4, 5, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18],
                     [0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18],
                     [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]]
-    best_mses = [138619.46074728668, 117871.38419374169, 112931.6480921518,
-                 108414.15432486929, 105641.63203117333, 102323.84346716877,
-                 101594.30392401466, 98964.2910982682, 98079.25449243843,
-                 97223.81562595078, 97160.73725673252, 97332.92951708901,
-                 97546.77846683317, 97776.85642254839, 98118.12694421364,
-                 98452.75395499919, 98814.06839444482, 99187.85802719608,
-                 99591.35617968217]
+    best_mses = [137565.32036137575, 116526.84368963055, 111214.05648618752, 106353.04872933947,
+                 103231.5567757093,   99600.39516195898,  98503.98289210549,  95577.68037627422,
+                  94350.00527219362,  93157.42029558783,  92727.54772410596,  92521.79611890586,
+                  92354.1742898915,   92200.22963038784,  92148.96332783563,  92088.88772977113,
+                  92051.12835223945,  92022.19527998423,  92017.86901772919]
     
 adjr2s = [None] * len(best_subsets)
 bics = [None] * len(best_subsets)
@@ -452,6 +452,8 @@ for idx_set in range(len(best_subsets)):
     bics[idx_set] = result.bic
     aics[idx_set] = result.aic
 ```
+
+### Plotting
 
 As always, we want to create some plots so that we can better visaulize and understand what's going on. To do this, we'll first write a function that takes in our metrics: 
 
