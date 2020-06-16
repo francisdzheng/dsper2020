@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Ridge and Lasso Regression
+title: Ridge, Lasso, and PCR
 parent: Tutorials
 nav_exclude: true
 latex: true
 ---
 
-# Ridge and Lasso Regression
+# Ridge, Lasso, and PCR
 {:.no_toc}
 
 ## Table of contents
@@ -17,7 +17,7 @@ latex: true
 
 ---
 
-In this tutorial, we will be exploring two linear regression models, ridge regression and lasso regression. You can view the code for this tutorial [here](https://colab.research.google.com/drive/1cP94zKrOUkBTW200q-OGePRbjl2BRL3L).
+In this tutorial, we will be exploring two linear regression models (ridge regression and lasso regression) and a regression analysis technique known as principal component regression (PCR). You can view the code for this tutorial [here](https://colab.research.google.com/drive/1cP94zKrOUkBTW200q-OGePRbjl2BRL3L).
 
 We'll be using the same dataset as before, so please refer [the previous tutorial](https://franciszheng.com/dsper2020/tutorials/tutorial04/#our-dataset) if you'd like to read about the dataset once more. 
 
@@ -47,8 +47,8 @@ import seaborn as sns
 from IPython.display import Markdown, display
 ```
 
-### Plot Settings
-This time, we'd like our plots to be a bit larger so that they're easier to read, so let's also run the following:
+### Plot and Output Settings
+We'll also introduce a few extra settings just to make the output of each of our cells a bit nicer:
 
 ```python
 # Reset all styles to the default:
@@ -56,9 +56,14 @@ plt.rcParams.update(plt.rcParamsDefault)
 # Then make graphs inline:
 %matplotlib inline
 
-# Set custom style settings:
-# NB: We need to separate "matplotlib inline" call and these settings into different
-# cells, otherwise the parameters are not set. This is a bug somewhere in Jupyter
+# Useful function for Jupyter to display text in bold:
+def displaybd(text):
+    display(Markdown("**" + text + "**"))
+
+```
+
+If you would like your plots to be a bit larger, please use the following code:
+```python
 plt.rcParams['figure.figsize'] = (7, 6)
 plt.rcParams['font.size'] = 24
 plt.rcParams['legend.fontsize'] = 'large'
@@ -70,15 +75,14 @@ plt.rcParams['lines.markersize'] = 10
 As a reminder, we can load our data and set our variables like so:
 
 ```python
-#-- LOAD DATA:
-
+# LOAD DATA:
 hittersDF = pd.read_csv('Hitters.csv', na_values=[""])
 # The first column has no name in the csv file:
 hittersDF.rename(columns={hittersDF.columns[0] : "Name"}, inplace=True, copy=False)
 hittersDF.set_index('Name', inplace=True)
 hittersDF.dropna(inplace=True)
 
-#-- CREATE X and y:
+# CREATE X and y:
 
 # Convert categorical variables into dummies:
 dummies = pd.get_dummies(hittersDF[['League', 'Division', 'NewLeague']])
@@ -216,7 +220,7 @@ print("MSE:", mean_squared_error(y_test, yhat))
 
 
 ### Choosing an Optimal \\(\alpha\\)
-Now, we will choose the optimal value for \\(\alpha\\) using cross-validation:
+Now, we will choose the optimal value for \\(\alpha\\) using cross-validation. We first create a pipline and then use [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) to get the optimal value:
 
 ```python
 # NB: Don't use 'RidgeCV'!
@@ -389,3 +393,147 @@ printCoefs(lasso, num_features + cat_features,
     League_N      62.292836   62.5718
     Division_W  -116.810487  -116.894
     NewLeague_N  -24.458230  -24.7975
+
+## Principal Component Regression
+
+Principal component regression (PCR) is a technique based on principal component analysis (PCA) that allows us to estimate unknown regression coefficients..
+
+### Modeling
+Here, we'll use `scikit-learn`'s [PCA](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html) class to fit our processed X data. 
+
+```python
+pca_nonscaled = PCA()
+pca_scaled = PCA()
+
+# In ridge and lasso we were not scaling categorical variables.
+# Similarly, we can do PCA without scaling categorical variables.
+# Moreover, it is debatable, whether it is appropriate at all to
+# include binary variables into PCA. Probably, it is OK.
+# See here: https://stats.stackexchange.com/questions/16331/doing-principal-component-analysis-or-factor-analysis-on-binary-data
+X_reduced_nonscaled = pca_nonscaled.fit_transform(X_processed)
+
+scaler = StandardScaler()
+X_reduced_scaled = pca_scaled.fit_transform(scaler.fit_transform(X))
+
+#-- PLOT THE SHARE OF EXPLAINED VARIANCE:
+
+ax = plt.gca()
+nonscaled_cat_line, = \
+    ax.plot(range(1, X_reduced_nonscaled.shape[1] + 1),
+            np.cumsum(pca_nonscaled.explained_variance_ratio_), 
+            '-o', markersize=4, color='blue')
+scaled_cat_line,  = \
+    ax.plot(range(1, X_reduced_scaled.shape[1] + 1),
+            np.cumsum(pca_scaled.explained_variance_ratio_),
+            '-o', markersize=4, color='red')
+ax.set_xticks(range(1, X_reduced_scaled.shape[1] + 1, 2));
+plt.xlabel('Number of components');
+plt.ylabel('Share of explained variance');
+plt.legend([nonscaled_cat_line, scaled_cat_line],
+           ['Categorical scaled', 'Categorical unscaled'],
+           fontsize=18);
+```
+
+![pca](pca.svg)
+
+### Cross-Validated Test Score on the Full Dataset
+This section is somewhat similar to how we chose optimal \\(\alpha\\) in the sections on ridge and lasso. We create pipelines for both unscaled categorical variables and scaled categorical variables and use GridSearchCV just like before:
+
+```python
+n_features_to_test = np.arange(1, X.shape[1] + 1)
+pipeline_params = {'reduce_dim__n_components': n_features_to_test}
+kf = KFold(n_splits=10, shuffle=True, random_state=90)
+
+# Pipeline for unscaled categorical variables:
+pca_regr_pipe_unscaled = Pipeline([
+    ('scaler', full_preprocess_pipeline),
+    ('reduce_dim', PCA()),
+    ('regressor', LinearRegression())
+])
+
+# Pipeline for scaled categorical variables:
+pca_regr_pipe_scaled = Pipeline([
+    ('scaler', StandardScaler()),
+    ('reduce_dim', PCA()),
+    ('regressor', LinearRegression())
+])
+
+gridsearch_unscaled = GridSearchCV(pca_regr_pipe_unscaled,
+                                   param_grid=pipeline_params, cv=kf,
+                                   scoring='neg_mean_squared_error',
+                                   return_train_score=False,
+                                   n_jobs=6, # Use 6 CPU cores
+                                   verbose=1, iid=False).fit(X, y)
+
+gridsearch_scaled = GridSearchCV(pca_regr_pipe_scaled,
+                                 param_grid=pipeline_params, cv=kf,
+                                 scoring='neg_mean_squared_error',
+                                 return_train_score=False,
+                                 n_jobs=6, # Use 6 CPU cores
+                                 verbose=1, iid=False).fit(X, y)
+```
+
+Now, let's make a plot of the cross-validated (root of) mean squared error):
+
+```python
+rmse_unscaled = np.sqrt(-gridsearch_unscaled.cv_results_["mean_test_score"])
+rmse_scaled = np.sqrt(-gridsearch_scaled.cv_results_["mean_test_score"])
+
+ax = plt.gca()
+nonscaled_cat_line, = \
+    ax.plot(range(1, len(rmse_unscaled) + 1), rmse_unscaled, 
+            '-o', markersize=4, color='blue')
+scaled_cat_line,  = \
+    ax.plot(range(1, len(rmse_scaled) + 1), rmse_scaled, 
+            '-o', markersize=4, color='red')
+ax.set_xticks(range(1, len(rmse_unscaled) + 1, 2));
+plt.xlabel('Number of components');
+plt.ylabel('Root of CV MSE');
+plt.legend([nonscaled_cat_line, scaled_cat_line],
+           ['Categorical scaled', 'Categorical unscaled']);
+```
+
+![cvmse](cvmse.svg)
+
+
+### Cross-Validated Test Score on the Train Dataset
+
+We'll now consider the cross-validated test score for the train dataset as well. The results above indicate that scaling categorical variables gives better performance, so we'll work work solely with scaled categorical variables now and create a plot again:
+
+```python
+gridsearch_scaled = GridSearchCV(pca_regr_pipe_scaled,
+                                 param_grid=pipeline_params, cv=kf,
+                                 scoring='neg_mean_squared_error',
+                                 return_train_score=False,
+                                 n_jobs=6, # Use 6 CPU cores
+                                 verbose=1, iid=False).fit(X_train, y_train)
+
+#-- PLOT CROSS-VALIDATED (ROOT OF) MEAN SQUARED ERROR:
+
+rmse_scaled = np.sqrt(-gridsearch_scaled.cv_results_["mean_test_score"])
+
+ax = plt.gca()
+ax.plot(range(1, len(rmse_scaled) + 1), rmse_scaled, 
+        '-o', markersize=4, color='red')
+ax.set_xticks(range(1, len(rmse_scaled) + 1, 2));
+plt.xlabel('Number of components');
+plt.ylabel('Root of CV MSE');
+plt.title('Scaled categorical variables')
+```
+
+![cvmse_train](cvmse_train.svg)
+
+### Test MSE
+
+Now, still using the pipline just for scaled categorical variables, we'll calculate \\(\hat{y}\\) and use this to compute our mean squared error: 
+
+```python
+pca_regr_pipe_scaled.set_params(reduce_dim__n_components=7)
+pca_regr_pipe_scaled.fit(X_train, y_train)
+yhat = pca_regr_pipe_scaled.predict(X_test)
+print("PCA regression with 7 components")
+print("Test MSE:", mean_squared_error(y_test, yhat))
+```
+
+> PCA regression with 7 components
+> Test MSE: 108266.95903472023
