@@ -535,5 +535,5 @@ print("PCA regression with 7 components")
 print("Test MSE:", mean_squared_error(y_test, yhat))
 ```
 
-> PCA regression with 7 components
+> PCA regression with 7 components  
 > Test MSE: 108266.95903472023
