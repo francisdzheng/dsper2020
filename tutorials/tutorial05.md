@@ -61,7 +61,6 @@ plt.rcParams.update(plt.rcParamsDefault)
 # Useful function for Jupyter to display text in bold:
 def displaybd(text):
     display(Markdown("**" + text + "**"))
-
 ```
 
 If you would like your plots to be a bit larger, please use the following code:
