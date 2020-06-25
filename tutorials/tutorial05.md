@@ -435,6 +435,8 @@ plt.legend([nonscaled_cat_line, scaled_cat_line],
            fontsize=18);
 ```
 
+>> NOTE: In the above code, the legend is mistakenly flipped. This does affect our decision later on to use scaled variables, so please be careful of this. This page will be updated to fix this error soon. 
+
 ![pca](pca.svg)
 
 ### Cross-Validated Test Score on the Full Dataset
@@ -493,6 +495,8 @@ plt.ylabel('Root of CV MSE');
 plt.legend([nonscaled_cat_line, scaled_cat_line],
            ['Categorical scaled', 'Categorical unscaled']);
 ```
+
+>> NOTE: In the above code, the legend is mistakenly flipped. This does affect our decision later on to use scaled variables, so please be careful of this. This page will be updated to fix this error soon. 
 
 ![cvmse](cvmse.svg)
 
