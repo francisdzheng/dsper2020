@@ -19,7 +19,7 @@ latex: true
 
 In this tutorial, we will be exploring several classification techniques.
 
-Much of this code was provided by Professor Kucheryavyy; I have broken the code down into a few smaller pieces and added some comments and explanations that should help your understanding. You can view the code for this tutorial [here]().
+Much of this code was provided by Professor Kucheryavyy; I have broken the code down into a few smaller pieces and added some comments and explanations that should help your understanding. You can view the code for this tutorial [here](https://colab.research.google.com/drive/1hYevhj_tTUBQCcj8OGSyGduoOL8c8m4K).
 
 
 ## Getting Started
