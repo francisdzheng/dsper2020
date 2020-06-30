@@ -17,9 +17,13 @@ latex: true
 
 ---
 
-In this tutorial, we will be exploring several classification techniques.
+In this tutorial, we will be exploring several classification techniques. 
 
-Much of this code was provided by Professor Kucheryavyy; I have broken the code down into a few smaller pieces and added some comments and explanations that should help your understanding. You can view the code for this tutorial [here](https://colab.research.google.com/drive/1hYevhj_tTUBQCcj8OGSyGduoOL8c8m4K).
+The code in sections 1-6 was provided by Professor Kucheryavyy; I have broken the code down into a few smaller pieces and added some comments and explanations that should help your understanding. Sections 1 - 5 provide in-depth examples of several new classifications techniques for classification problems just involving one class. Section 6 provides a few more examples. 
+
+Section 7 is a continuation of [my previous tutorial on k-nearest neighbors classification](../tutorial02); you can refer to this section for simple examples of the new techniques we learn here, but for a classification problem with multiple classes (in this case, three classes). 
+
+You can view the code for this tutorial [here](https://colab.research.google.com/drive/1hYevhj_tTUBQCcj8OGSyGduoOL8c8m4K).
 
 
 ## Getting Started
