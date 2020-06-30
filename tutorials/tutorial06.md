@@ -1849,3 +1849,238 @@ display(confusionDF)
   </tbody>
 </table>
 </div>
+
+## More Iris Classification
+Here, we will apply some of the new techniques we learned above to the iris classification problem we explored using k-nearest neighbors in [Tutorial 02](../tutorial02). 
+
+### Our Dataset
+I've included some of the important descriptions from Tutorial 02 in this tutorial as well, but please review tutorial 02 for more details on how we initially set up and process our dataset.   
+As a reminder, we are using the [iris data set](https://archive.ics.uci.edu/ml/datasets/Iris) from the University of California, Irvine and are attempting to classify types of irises using the following four attributes:
+
+1. Sepal length
+2. Sepal width
+3. Petal length
+4. Petal width
+
+There are three types of irises: 
+1. Iris Setosa
+2. Iris Versicolor
+3. Iris Virginica
+
+#### Importing Our Dataset
+
+Let's import the data set as a `pandas` dataframe:
+
+```python
+url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
+names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'type']
+iris_df = pd.read_csv(url, names=names)
+```
+
+#### Splitting Data into Train and Test Data
+
+Let's split our data into 80% training data and 20% testing data. We can do this using [`train_test_split`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) and its `train_size` parameter:
+
+```python
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.80)
+```
+
+#### Feature Scaling
+Now, we want to perform some [feature scaling](https://en.wikipedia.org/wiki/Feature_scaling) to normalize the range of our independent variables. 
+
+```python
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+scaler.fit(X_train)
+
+X_train = scaler.transform(X_train)
+X_test = scaler.transform(X_test)
+```
+
+### Logit
+Let's first take a look at how we might apply logit to our iris classification problem. You may apply logit using the techniques we learned above (using GLM), but I will show you one other method we can employ using [scikit-learn's `Logistic Regression` class](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html), as we can consider logit and logistic regression to be [the same thing](https://stats.idre.ucla.edu/r/dae/logit-regression/)
+
+#### Fitting our Model
+
+Let's import the `Logistic Regression` class and fit our model as follows:
+
+```python
+from sklearn.linear_model import LogisticRegression
+logit_model = LogisticRegression()
+logit_model.fit(X_train, y_train)
+```
+
+#### Making Predictions
+Then, we'll make some predictions and store them in a variable called `y_pred`:
+
+```python
+y_pred = logit_model.predict(X_test)
+```
+
+#### Evaluating our Predictions
+Like we did in [Tutorial 02](../tutorial02), let's make a classification report and confusion matrix. 
+
+```python
+from sklearn.metrics import classification_report
+print(classification_report(y_test, y_pred))
+```
+
+|                     | **precision** | **recall** | **f1-score** | **support** |
+|---------------------|:-------------:|:----------:|:------------:|:-----------:|
+|     **Iris-setosa** |      1.00     |    1.00    |     1.00     |     9     |
+| **Iris-versicolor** |      1.00    |    0.70   |     0.82    |      10   |
+|  **Iris-virginica** |      0.79     |    1.00    |     0.88     |      11      |
+
+
+```python
+from sklearn.metrics import confusion_matrix
+
+cm = confusion_matrix(y_test, y_pred)
+cm_df = pd.DataFrame(cm,
+                     index = ['setosa','versicolor','virginica'], 
+                     columns = ['setosa','versicolor','virginica'])
+
+sns.heatmap(cm_df, annot=True)
+plt.ylabel('Actual')
+plt.xlabel('Predicted')
+plt.show()
+```
+
+![logitheat](logitheat.svg)
+
+
+Using this heat map, we can make the following observations:
+
+1. All setosa flowers were correctly classified by our model. 
+2. Seven versicolor flowers were correctly classified, and three versicolor flowers were incorrectly classified as virginica flowers.
+3. All virginica flowers were correctly classified by our model. 
+
+Again, you may not get the same exact classification report or confusion matrix, but this is normal, as your results will vary each time you run your model.
+
+
+### Linear Discriminant Analysis
+
+Let's now try using linear discriminant analysis for our classification. 
+
+#### Fitting our Model
+
+Again, let's use the `Linear Discriminant Analysis` class to fit our model:
+
+```python
+lda_model = LinearDiscriminantAnalysis()
+lda_model.fit(X_train, y_train)
+```
+
+#### Making Predictions
+Then, we'll make some predictions and store them in a variable called `y_pred`:
+
+```python
+y_pred = lda_model.predict(X_test)
+```
+
+#### Evaluating our Predictions
+Like we did in [Tutorial 02](../tutorial02), let's make a classification report and confusion matrix. If you want, you can also use the functions `printPriorProbabilities()`,  `printGroupMeans()`, and `printLDACoeffs()` that we wrote earlier, but here I'll keep it simple and just look at our classification report and heatmap like we did just earlier. 
+
+```python
+print(classification_report(y_test, y_pred))
+```
+
+|                     | **precision** | **recall** | **f1-score** | **support** |
+|---------------------|:-------------:|:----------:|:------------:|:-----------:|
+|     **Iris-setosa** |      1.00     |    1.00    |     1.00     |     9     |
+| **Iris-versicolor** |      1.00    |    1.00   |     1.00    |      10   |
+|  **Iris-virginica** |      1.00     |    1.00    |     1.00     |      11      |
+
+
+In thise case, we can see our model did very well. Let's also take a look at the heatmap to see that a little bit more easily: 
+
+```python
+cm = confusion_matrix(y_test, y_pred)
+cm_df = pd.DataFrame(cm,
+                     index = ['setosa','versicolor','virginica'], 
+                     columns = ['setosa','versicolor','virginica'])
+
+sns.heatmap(cm_df, annot=True)
+plt.ylabel('Actual')
+plt.xlabel('Predicted')
+plt.show()
+```
+
+![ldaheat](ldaheat.svg)
+
+
+Using this heat map, we can make the following observations:
+
+1. All setosa flowers were correctly classified by our model. 
+2. All versicolors were correctly classified by our model.
+3. All virginica flowers were correctly classified by our model. 
+
+Again, you may not get the same exact classification report or confusion matrix, but this is normal, as your results will vary each time you run your model.
+
+
+### Quadratic Discriminant Analysis
+
+Let's now try using quadratic discriminant analysis for our classification. 
+
+#### Fitting our Model
+
+Again, let's use the `Linear Discriminant Analysis` class to fit our model:
+
+```python
+qda_model = QuadraticDiscriminantAnalysis()
+qda_model.fit(X_train, y_train)
+```
+
+#### Making Predictions
+Then, we'll make some predictions and store them in a variable called `y_pred`:
+
+```python
+y_pred = qda_model.predict(X_test)
+```
+
+#### Evaluating our Predictions
+Like we did in [Tutorial 02](../tutorial02), let's make a classification report and confusion matrix. If you want, you can also use the functions `printPriorProbabilities()` and `printGroupMeans()` that we wrote earlier, but here I'll keep it simple and just look at our classification report and heatmap like we did just earlier. 
+
+```python
+print(classification_report(y_test, y_pred))
+```
+
+|                     | **precision** | **recall** | **f1-score** | **support** |
+|---------------------|:-------------:|:----------:|:------------:|:-----------:|
+|     **Iris-setosa** |      1.00     |    1.00    |     1.00     |     9     |
+| **Iris-versicolor** |      1.00    |    0.80   |     0.89    |      10   |
+|  **Iris-virginica** |      0.85     |    1.00    |     0.92    |      11      |
+
+
+```python
+cm = confusion_matrix(y_test, y_pred)
+cm_df = pd.DataFrame(cm,
+                     index = ['setosa','versicolor','virginica'], 
+                     columns = ['setosa','versicolor','virginica'])
+
+sns.heatmap(cm_df, annot=True)
+plt.ylabel('Actual')
+plt.xlabel('Predicted')
+plt.show()
+```
+
+![qdaheat](qdaheat.svg)
+
+
+Using this heat map, we can make the following observations:
+
+1. All setosa flowers were correctly classified by our model. 
+2. Eight versicolor flowers were correctly classified, and two versicolor flowers were incorrectly classified as virginica flowers.
+3. All virginica flowers were correctly classified by our model. 
+
+Again, you may not get the same exact classification report or confusion matrix, but this is normal, as your results will vary each time you run your model.
+
+
+
+
+
+
+
+
+

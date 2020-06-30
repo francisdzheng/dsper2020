@@ -142,7 +142,7 @@ y_pred = classifier.predict(X_test)
 
 Now, our model can take attributes (sepal-length, sepal-width, petal-length, and petal-width) and predict which type of iris it is. We are doing this using our test data, `X_test`.
 
-## Evaluating our Algorithm
+## Evaluating our Predictions
 
 We do not have too many data points, so we can first just compare our predictions with our test data visually:
 
