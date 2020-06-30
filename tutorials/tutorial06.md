@@ -1879,7 +1879,14 @@ iris_df = pd.read_csv(url, names=names)
 
 #### Splitting Data into Train and Test Data
 
-Let's split our data into 80% training data and 20% testing data. We can do this using [`train_test_split`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) and its `train_size` parameter:
+Let's first define our \\(X\\) and \\(y\\) variables: 
+
+```python
+X = iris_df.iloc[:, :-1] #attributes, iloc[:, :-1] means until the last column
+y = iris_df['type'] #labels
+```
+
+Now, et's split our data into 80% training data and 20% testing data. We can do this using [`train_test_split`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) and its `train_size` parameter:
 
 ```python
 from sklearn.model_selection import train_test_split
@@ -1901,7 +1908,7 @@ X_test = scaler.transform(X_test)
 ### Logit
 Let's first take a look at how we might apply logit to our iris classification problem. You may apply logit using the techniques we learned above (using GLM), but I will show you one other method we can employ using [scikit-learn's `Logistic Regression` class](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html), as we can consider logit and logistic regression to be [the same thing](https://stats.idre.ucla.edu/r/dae/logit-regression/)
 
-#### Fitting our Model
+#### Fitting Our Model
 
 Let's import the `Logistic Regression` class and fit our model as follows:
 
@@ -1918,7 +1925,7 @@ Then, we'll make some predictions and store them in a variable called `y_pred`:
 y_pred = logit_model.predict(X_test)
 ```
 
-#### Evaluating our Predictions
+#### Evaluating Our Predictions
 Like we did in [Tutorial 02](../tutorial02), let's make a classification report and confusion matrix. 
 
 ```python
@@ -1963,7 +1970,7 @@ Again, you may not get the same exact classification report or confusion matrix,
 
 Let's now try using linear discriminant analysis for our classification. 
 
-#### Fitting our Model
+#### Fitting Our Model
 
 Again, let's use the `Linear Discriminant Analysis` class to fit our model:
 
@@ -1979,7 +1986,7 @@ Then, we'll make some predictions and store them in a variable called `y_pred`:
 y_pred = lda_model.predict(X_test)
 ```
 
-#### Evaluating our Predictions
+#### Evaluating Our Predictions
 Like we did in [Tutorial 02](../tutorial02), let's make a classification report and confusion matrix. If you want, you can also use the functions `printPriorProbabilities()`,  `printGroupMeans()`, and `printLDACoeffs()` that we wrote earlier, but here I'll keep it simple and just look at our classification report and heatmap like we did just earlier. 
 
 ```python
@@ -2023,7 +2030,7 @@ Again, you may not get the same exact classification report or confusion matrix,
 
 Let's now try using quadratic discriminant analysis for our classification. 
 
-#### Fitting our Model
+#### Fitting Our Model
 
 Again, let's use the `Linear Discriminant Analysis` class to fit our model:
 
@@ -2039,7 +2046,7 @@ Then, we'll make some predictions and store them in a variable called `y_pred`:
 y_pred = qda_model.predict(X_test)
 ```
 
-#### Evaluating our Predictions
+#### Evaluating Our Predictions
 Like we did in [Tutorial 02](../tutorial02), let's make a classification report and confusion matrix. If you want, you can also use the functions `printPriorProbabilities()` and `printGroupMeans()` that we wrote earlier, but here I'll keep it simple and just look at our classification report and heatmap like we did just earlier. 
 
 ```python
